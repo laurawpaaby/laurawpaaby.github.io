@@ -5,8 +5,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>sbs</title>
       <meta name="keywords" content="">
@@ -29,35 +28,38 @@
 
       <!-- Inline style overrides -->
       <style>
-         /* Allow the container to be up to 1400px wide (instead of 1170px) */
+         /* Allow container to be wider than the default 1170px */
          .container {
-            max-width: 1400px !important;
+            max-width: 1400px !important; /* you can adjust this further */
+            margin: 0 auto;               /* center the container on large screens */
          }
 
-         /* Make H2 and H3 slightly smaller than defaults in style.css */
+         /* Make H2 and H3 smaller than defaults set in style.css */
          h2 {
-            font-size: 18px !important; /* Overriding 22px */
+            font-size: 18px !important; /* Overriding style.css (22px) */
             line-height: 24px;
          }
          h3 {
-            font-size: 16px !important; /* Overriding 18px */
+            font-size: 16px !important; /* Overriding style.css (18px) */
             line-height: 22px;
          }
 
-         /* Larger gap between main content and footer (if desired) */
+         /* Give extra space above footer */
          .main-content {
             margin-bottom: 120px; 
          }
 
-         /* Make the ToC sticky below the header */
+         /* Make ToC sticky below the header */
          .table_of_contents {
             position: sticky;
-            top: 80px;
+            top: 80px;         /* Adjust if your header is taller/shorter */
             z-index: 999;
             background: #fff;
             padding: 10px;
             border-right: 1px solid #ccc; 
          }
+
+         /* Highlight the currently active link in the ToC */
          .table_of_contents ul li a.active {
             font-weight: bold;
             color: #f00; /* Red highlight */
@@ -68,6 +70,7 @@
             padding: 10px 0;
             text-align: center;
          }
+
          footer {
             margin: 0;
             padding: 0;
@@ -149,13 +152,14 @@
       <!-- end header -->
 
       <!-- main content area -->
-      <div class="shop main-content">
-         <div class="container-fluid">
-            <div class="row d_flex d_grid">
-               <!-- Table of Contents on the left (sticky) -->
-               <div class="col-md-2">
+      <div class="main-content">
+         <div class="container">
+            <div class="row">
+               <!-- ToC: offset by 1 column to shift it from the far left, 2 columns wide -->
+               <div class="col-md-2 offset-md-1">
                   <div class="table_of_contents">
                      <ul>
+                        <li><a href="#installation">Installation</a></li>
                         <li><a href="#project">Project</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -163,12 +167,18 @@
                   </div>
                </div>
 
-               <!-- Main content on the right (wider: col-md-10) -->
-               <div class="col-lg-3">
+               <!-- Main text: offset by 1 column to create space between ToC and text, 8 columns wide -->
+               <div class="col-md-8 offset-md-1">
                   <div class="titlepage text_align_left">
+                     <!-- Installation Section -->
+                     <h2 id="installation">Installation</h2>
+                     <p>You can install GenDa Lens via pip from PyPI:</p>
+                     <pre><code>pip install laura-package</code></pre>
+                     <p>Or from GitHub using:</p>
+                     <pre><code>pip install git+https://github.com/laurawpaaby/package.io</code></pre>
 
                      <!-- Project Section -->
-                     <h2 id="project">Project TEST lg30</h2>
+                     <h2 id="project">Project</h2>
                      <p>
                         This package was developed as part of a master’s thesis on the MSc 
                         in Cognitive Science at Aarhus University. With this package, I hope 
