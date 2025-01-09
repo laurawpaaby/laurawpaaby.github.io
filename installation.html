@@ -27,11 +27,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
 
-      <!-- Optional inline style to add extra space above footer -->
+      <!-- Inline style adjustments -->
       <style>
-         /* Bigger gap between content and footer */
+         /* Add a bigger gap between content and footer */
          .main-content {
-            margin-bottom: 200px; /* Adjust as you wish */
+            margin-bottom: 200px; /* Adjust as needed for space above footer */
          }
 
          /* Example highlight styling for the active link in TOC */
@@ -40,10 +40,21 @@
             color: #f00; /* Red text to highlight */
          }
 
-         /* Make sure the footer text is wide enough and centered */
+         /* Footer text spacing (shorter vertically) */
          .copy-container {
-            padding: 30px 0; /* Extra padding for breathing room */
+            padding: 10px 0; /* Reduced padding for a shorter footer */
             text-align: center;
+         }
+
+         /* Remove extra space below the footer */
+         html, body {
+            margin: 0;
+            padding: 0;
+            /* Ensures no default spacing around body */
+         }
+         footer {
+            margin: 0;
+            padding: 0;
          }
       </style>
    </head>
@@ -142,6 +153,7 @@
                               <pre><code>pip install git+https://github.com/laurawpaaby/package.io</code></pre>
                            </div>
                         </div>   
+                     </div>
                   </div>
                </div>
             </div>
