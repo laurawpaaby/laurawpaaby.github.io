@@ -16,9 +16,9 @@
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <!-- style css -->
       <link rel="stylesheet" href="css/style.css">
-      <!-- Responsive-->
+      <!-- Responsive css -->
       <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
+      <!-- favicon -->
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- font-awesome -->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
@@ -29,38 +29,50 @@
 
       <!-- Inline style adjustments -->
       <style>
-         /* Add a bigger gap between content and footer */
-         .main-content {
-            margin-bottom: 200px; /* Adjust as needed for space above footer */
+         /* Ensure no default spacing around html/body */
+         html, body {
+            margin: 0;
+            padding: 0;
          }
 
-         /* Example highlight styling for the active link in TOC */
+         /* Additional gap between main content and footer (adjust as needed) */
+         .main-content {
+            margin-bottom: 120px; 
+         }
+
+         /* Make the ToC sticky below the header */
+         .table_of_contents {
+            position: sticky;
+            top: 80px;    /* Adjust if your header is taller or shorter */
+            z-index: 999; /* Keep ToC on top */
+            background: #fff;
+            padding: 10px;
+            border-right: 1px solid #ccc; 
+         }
+
+         /* Highlight the currently active link in the ToC */
          .table_of_contents ul li a.active {
             font-weight: bold;
-            color: #f00; /* Red text to highlight */
+            color: #f00; /* Highlight color (red) */
          }
 
          /* Footer text spacing (shorter vertically) */
          .copy-container {
-            padding: 10px 0; /* Reduced padding for a shorter footer */
+            padding: 10px 0;
             text-align: center;
          }
 
-         /* Remove extra space below the footer */
-         html, body {
-            margin: 0;
-            padding: 0;
-            /* Ensures no default spacing around body */
-         }
          footer {
             margin: 0;
             padding: 0;
          }
+
+         /* Make content area wider by using col-md-9 instead of col-md-8 */
       </style>
    </head>
 
    <body class="main-layout inner_page">
-      <!-- loader  -->
+      <!-- loader -->
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#"/></div>
       </div>
@@ -130,7 +142,7 @@
       <div class="shop main-content">
          <div class="container-fluid">
             <div class="row d_flex d_grid">
-               <!-- Table of Contents on the far left (no title) -->
+               <!-- Table of Contents on the left (sticky) -->
                <div class="col-md-3">
                   <div class="table_of_contents">
                      <ul>
@@ -141,72 +153,73 @@
                      </ul>
                   </div>
                </div>
-              <!-- content on the right -->
-               <div class="class">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-md-8">
-                           <div class="titlepage text_align_left">
-               
-                              <!-- Project Section -->
-                              <h2 id="project">TESTING</h2>
-                              <p>
-                                 This package was developed as part of a master’s thesis on the MSc 
-                                 in Cognitive Science at Aarhus University. With this package, I hope 
-                                 to contribute to the development of methods for evaluating the use 
-                                 of LLMs.
-                              </p>
-                              <p>
-                                 The main contribution is refining and wrapping existing methods into 
-                                 a coherent test suite. Additionally, we have introduced our own 
-                                 evaluation and visualization functions to present the results of 
-                                 various metrics in a cohesive manner.
-                              </p>
-               
-                              <!-- Contact Section -->
-                              <h3 id="contact">Contact</h3>
-                              <p>
-                                 If you have any questions regarding the project or the code 
-                                 implementation, feel free to contact <a href="mailto:someone@example.com">someone@example.com</a>.
-                              </p>
-                              <p>
-                                 GenDa Lens is licensed under MIT and available on 
-                                 <a href="https://github.com/username/GenDaLens">GitHub</a>.
-                              </p>
-               
-                              <!-- Acknowledgements Section -->
-                              <h3 id="acknowledgements">Acknowledgements</h3>
-                              <p>
-                                 This project uses code from three already implemented frameworks for 
-                                 quantifying gender bias in Danish. While all externally authored code 
-                                 is properly attributed in the repository’s scripts, we would also 
-                                 like to acknowledge the authors of the work we draw on:
-                              </p>
-               
-                              <!-- Example references in APA style with DOI links -->
-                              <p>
-                                 <strong>Reference 1:</strong> Author, A. A. (Year). 
-                                 <em>Title of the article</em>. Journal Title, 10(2), 123–145. 
-                                 <a href="https://doi.org/10.0000/xyz123">https://doi.org/10.0000/xyz123</a>
-                              </p>
-                              <p>
-                                 <strong>Reference 2:</strong> Author, B. B., &amp; Author, C. C. (Year). 
-                                 <em>Another work</em>. Publisher. 
-                                 <a href="https://doi.org/10.0000/abc456">https://doi.org/10.0000/abc456</a>
-                              </p>
-                              <p>
-                                 <strong>Reference 3:</strong> Author, D. D. (Year). 
-                                 <em>Yet another reference</em>. Conference Proceedings. 
-                                 <a href="https://doi.org/10.0000/def789">https://doi.org/10.0000/def789</a>
-                              </p>
-                              <p>
-                                 <strong>Reference 4:</strong> Organization E. (Year). 
-                                 <em>Document title</em>. Retrieved from 
-                                 <a href="https://doi.org/10.0000/ghi012">https://doi.org/10.0000/ghi012</a>
-                              </p>
-                           </div>
-                        </div>   
-                     </div>
+
+               <!-- Content on the right (wider by using col-md-9) -->
+               <div class="col-md-9">
+                  <div class="titlepage text_align_left">
+                     <!-- Installation Section (if needed) -->
+                     <h2 id="installation">Installation</h2>
+                     <p>You can install GenDa Lens via pip from PyPI:</p>
+                     <pre><code>pip install laura-package</code></pre>
+                     <p>or from GitHub using:</p>
+                     <pre><code>pip install git+https://github.com/laurawpaaby/package.io</code></pre>
+
+                     <!-- Project Section -->
+                     <h2 id="project">Project</h2>
+                     <p>
+                        This package was developed as part of a master’s thesis on the MSc 
+                        in Cognitive Science at Aarhus University. With this package, I hope 
+                        to contribute to the development of methods for evaluating the use 
+                        of LLMs.
+                     </p>
+                     <p>
+                        The main contribution is refining and wrapping existing methods into 
+                        a coherent test suite. Additionally, we have introduced our own 
+                        evaluation and visualization functions to present the results of 
+                        various metrics in a cohesive manner.
+                     </p>
+
+                     <!-- Contact Section -->
+                     <h2 id="contact">Contact</h2>
+                     <p>
+                        If you have any questions regarding the project or the code 
+                        implementation, feel free to contact <a href="mailto:someone@example.com">someone@example.com</a>.
+                     </p>
+                     <p>
+                        GenDa Lens is licensed under MIT and available on 
+                        <a href="https://github.com/username/GenDaLens">GitHub</a>.
+                     </p>
+
+                     <!-- Acknowledgements Section -->
+                     <h2 id="acknowledgements">Acknowledgements</h2>
+                     <p>
+                        This project uses code from three already implemented frameworks for 
+                        quantifying gender bias in Danish. While all externally authored code 
+                        is properly attributed in the repository’s scripts, we would also 
+                        like to acknowledge the authors of the work we draw on:
+                     </p>
+
+                     <!-- Example references in APA style with DOI links -->
+                     <p>
+                        <strong>Reference 1:</strong> Author, A. A. (Year). 
+                        <em>Title of the article</em>. Journal Title, 10(2), 123–145. 
+                        <a href="https://doi.org/10.0000/xyz123">https://doi.org/10.0000/xyz123</a>
+                     </p>
+                     <p>
+                        <strong>Reference 2:</strong> Author, B. B., &amp; Author, C. C. (Year). 
+                        <em>Another work</em>. Publisher. 
+                        <a href="https://doi.org/10.0000/abc456">https://doi.org/10.0000/abc456</a>
+                     </p>
+                     <p>
+                        <strong>Reference 3:</strong> Author, D. D. (Year). 
+                        <em>Yet another reference</em>. Conference Proceedings. 
+                        <a href="https://doi.org/10.0000/def789">https://doi.org/10.0000/def789</a>
+                     </p>
+                     <p>
+                        <strong>Reference 4:</strong> Organization E. (Year). 
+                        <em>Document title</em>. Retrieved from 
+                        <a href="https://doi.org/10.0000/ghi012">https://doi.org/10.0000/ghi012</a>
+                     </p>
                   </div>
                </div>
             </div>
