@@ -20,24 +20,46 @@
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <!-- Tweaks for older IEs-->
+      <!-- font-awesome -->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Optional inline style to add extra space above footer -->
+      <style>
+         /* Bigger gap between content and footer */
+         .main-content {
+            margin-bottom: 60px; /* Adjust as you wish */
+         }
+
+         /* Example highlight styling for the active link in TOC */
+         .table_of_contents ul li a.active {
+            font-weight: bold;
+            color: #f00; /* Red text to highlight */
+         }
+
+         /* Make sure the footer text is wide enough and centered */
+         .copy-container {
+            padding: 30px 0; /* Extra padding for breathing room */
+            text-align: center;
+         }
+      </style>
    </head>
-   <!-- body -->
+
    <body class="main-layout inner_page">
       <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#"/></div>
       </div>
       <!-- end loader -->
+
       <!-- header -->
       <div class="header">
          <div class="container-fluid">
             <div class="row d_flex">
-               <div class=" col-md-2 col-sm-3 col logo_section">
+               <div class="col-md-2 col-sm-3 col logo_section">
                   <div class="full">
                      <div class="center-desk">
                         <div class="logo">
@@ -47,9 +69,11 @@
                   </div>
                </div>
                <div class="col-md-8 col-sm-12">
-                  <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                     <span class="navbar-toggler-icon"></span>
+                  <nav class="navigation navbar navbar-expand-md navbar-dark">
+                     <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarsExample04" aria-controls="navbarsExample04"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                      </button>
                      <div class="collapse navbar-collapse" id="navbarsExample04">
                         <ul class="navbar-nav mr-auto">
@@ -74,61 +98,76 @@
                </div>
                <div class="col-md-2">
                   <ul class="email text_align_right">
-                     <li class="d_none"><a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                     <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></a> </li>
+                     <li class="d_none">
+                        <a href="Javascript:void(0)">
+                           <i class="fa fa-user" aria-hidden="true"></i>
+                        </a>
+                     </li>
+                     <li class="d_none">
+                        <a href="Javascript:void(0)">
+                           <i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i>
+                        </a>
+                     </li>
                   </ul>
                </div>
             </div>
          </div>
       </div>
-      <!-- end header inner -->
-      <div class="shop">
-   <div class="container-fluid">
-      <div class="row d_flex d_grid">
-         <!-- Small Table of Contents on the far left -->
-         <div class="col-md-3">
-            <div class="table_of_contents">
-               <h4>Table of Contents</h4>
-               <ul>
-                  <li><a href="#installation">Installation</a></li>
-               </ul>
-            </div>
-         </div>
+      <!-- end header -->
 
-         <!-- Installation content on the right -->
-         <div class="col-md-9 order_1_mobile">
-            <div class="titlepage text_align_left">
-               <h2 id="installation">Installation</h2>
-               <p>You can install GenDa Lens via pip from PyPI:</p>
-               <pre><code>pip install laura-package</code></pre>
-               <p>or from GitHub using:</p>
-               <pre><code>pip install git+https://github.com/laurawpaaby/package.io</code></pre>
+      <!-- main content area -->
+      <div class="shop main-content">
+         <div class="container-fluid">
+            <div class="row d_flex d_grid">
+               <!-- Table of Contents on the far left (no title) -->
+               <div class="col-md-3">
+                  <div class="table_of_contents">
+                     <ul>
+                        <li><a class="active" href="#installation">Installation</a></li>
+                     </ul>
+                  </div>
+               </div>
+
+               <!-- Installation content on the right -->
+               <div class="col-md-9 order_1_mobile">
+                  <div class="titlepage text_align_left">
+                     <h2 id="installation">Installation</h2>
+                     <p>You can install GenDa Lens via pip from PyPI:</p>
+                     <pre><code>pip install laura-package</code></pre>
+
+                     <p>or from GitHub using:</p>
+                     <pre><code>pip install git+https://github.com/laurawpaaby/package.io</code></pre>
+                  </div>
+               </div>
             </div>
          </div>
       </div>
-      <!-- end shop -->
-      <!--  footer -->
+      <!-- end main content area -->
+
+      <!-- footer -->
       <footer>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <p>© 2025 All Rights Reserved LAURA WULFF PAABY</p>
-                     </div>
+         <div class="copyright">
+            <div class="container copy-container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <p>© 2025 All Rights Reserved LAURA WULFF PAABY</p>
                   </div>
                </div>
             </div>
          </div>
       </footer>
       <!-- end footer -->
+
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
       <script src="js/custom.js"></script>
+      <!-- If using AOS for scroll animations -->
       <script>
-         AOS.init();
+         if (typeof AOS !== 'undefined') {
+            AOS.init();
+         }
       </script>
    </body>
 </html>
