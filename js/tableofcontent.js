@@ -1,34 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Select all <section> elements that have an "id"
-  const sections = document.querySelectorAll("section[id]");
-  // Select all ToC links inside .table_of_contents
-  const navLinks = document.querySelectorAll(".table_of_contents ul li a");
+  const toc = document.getElementById("toc");
+  const headings = document.querySelectorAll("h2, h3");
 
+  headings.forEach((heading) => {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = `#${heading.id}`;
+    link.textContent = heading.textContent;
+
+    // Add a class to style nested H3 under H2
+    if (heading.tagName === "H3") {
+      li.classList.add("nested");
+    }
+
+    li.appendChild(link);
+    toc.appendChild(li);
+  });
+
+  // Highlight active section on scroll
+  const links = toc.querySelectorAll("a");
   window.addEventListener("scroll", () => {
-    let currentSection = "";
-
-    // Figure out which <section> is currently in view
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-
-      /*
-        If the current scroll position (pageYOffset) 
-        is >= top of the section minus 1/3 of its height,
-        we consider that section 'current'.
-      */
-      if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
-        currentSection = section.getAttribute("id");
+    let currentId = "";
+    headings.forEach((heading) => {
+      const rect = heading.getBoundingClientRect();
+      if (rect.top <= 100 && rect.bottom >= 100) {
+        currentId = heading.id;
       }
     });
 
-    // Update link styles based on "currentSection"
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      // Compare the link's #hash (minus '#') to the currentSection ID
-      if (link.getAttribute("href").slice(1) === currentSection) {
-        link.classList.add("active");
-      }
+    links.forEach((link) => {
+      link.classList.toggle("active", link.getAttribute("href").slice(1) === currentId);
     });
   });
 });
