@@ -5,8 +5,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>sbs</title>
       <meta name="keywords" content="">
@@ -16,21 +15,115 @@
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <!-- style css -->
       <link rel="stylesheet" href="css/style.css">
-      <!-- Responsive-->
+      <!-- Responsive css -->
       <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
+      <!-- favicon -->
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- font-awesome -->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-
       <!--[if lt IE 9]>
-         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
+
+      <!-- Inline style overrides -->
+      <style>
+         /* Make container wider than default (1170px) and centered */
+         .container {
+            max-width: 1400px !important;
+            margin: 0 auto;
+         }
+
+         /* Ensure extra space between main content and footer */
+         .main-content {
+            margin-bottom: 120px; 
+         }
+
+         /* The row that contains the ToC and content:
+            100px top margin from header */
+         .content-row {
+            margin-top: 50px;
+         }
+
+         /* Sticky ToC beneath header */
+         /* Table of Contents */
+         .table_of_contents {
+            position: sticky;
+            top: 80px;
+            z-index: 999;
+            background: #fff;
+            padding: 10px;
+            border-right: 1px solid #ccc;
+            list-style: none;
+         }
+         .table_of_contents ul {
+            padding: 0;
+            margin: 0;
+         }
+         .table_of_contents li {
+            margin: 10px 0;
+         }
+         .table_of_contents li ul {
+            margin-left: 15px;
+         }
+         .table_of_contents a {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s ease;
+         }
+         .table_of_contents a:hover {
+            color: #f00;
+         }
+         .table_of_contents a.active {
+            font-weight: bold;
+            color: #f00;
+         }
+         
+         /* Overriding heading styles from style.css */
+         h2 {
+            font-size: 45px !important;  /* Overriding style.css (22px) */
+            color: #2b2b2b;
+            line-height: 60px;
+            font-weight: bold;
+            padding-top: 50px;  /* Extra spacing from top if needed */
+            padding-bottom: 20px;
+            display: inline-block;
+         }
+         h3 {
+            font-size: 28px !important;  /* Overriding style.css (18px) */
+            line-height: 42px;
+            padding-top: 20px;
+            color: #2b2b2b;
+            font-weight: bold;
+            padding-bottom: 20px;
+         }
+
+         /* Footer spacing and alignment */
+         .copy-container {
+            padding: 10px 0;
+            text-align: center;
+         }
+         footer {
+            margin: 0;
+            padding: 0;
+         }
+
+         /* Remove default margin/padding on html/body */
+         html, body {
+            margin: 0;
+            padding: 0;
+         }
+      </style>
    </head>
 
    <body class="main-layout inner_page">
-      <!-- ======= HEADER (TOP BAR) ======= -->
+      <!-- loader -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
+      </div>
+      <!-- end loader -->
+
+      <!-- header -->
       <div class="header">
          <div class="container-fluid">
             <div class="row d_flex">
@@ -38,9 +131,7 @@
                   <div class="full">
                      <div class="center-desk">
                         <div class="logo">
-                           <a href="index.html">
-                              <img src="images/logo.png" alt="Logo" />
-                           </a>
+                           <a href="index.html"><img src="images/logo.png" alt="#" /></a>
                         </div>
                      </div>
                   </div>
@@ -63,84 +154,137 @@
                            <li class="nav-item">
                               <a class="nav-link" href="userguide.html">User Guide</a>
                            </li>
-                           <li class="nav-item">
+                           <li class="nav-item active">
                               <a class="nav-link" href="api.html">API</a>
                            </li>
-                           <li class="nav-item active">
+                           <li class="nav-item">
                               <a class="nav-link" href="about.html">About</a>
                            </li>
                         </ul>
                      </div>
                   </nav>
                </div>
-               <div class="col-md-2">
-                  <ul class="email text_align_right">
-                     <li class="d_none">
-                        <a href="javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i></a>
-                     </li>
-                     <li class="d_none">
-                        <a href="javascript:void(0)"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></a>
-                     </li>
-                  </ul>
+            </div>
+         </div>
+      </div>
+      <!-- end header -->
+
+      <!-- main content area -->
+      <div class="main-content">
+         <div class="container">
+            <!-- Single row with margin-top to push content down -->
+            <div class="row content-row">
+               <!-- Table of Contents (col-md-3) -->
+               <div class="col-md-3">
+                  <div class="table_of_contents">
+                     <ul>
+                        <li>
+                           <a href="#about">About</a>
+                           <ul>
+                              <li><a href="#project">Project</a></li>
+                              <li><a href="#contact">Contact</a></li>
+                              <li><a href="#acknowledgements">Acknowledgements</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- Main content (col-md-9) -->
+               <div class="col-md-7">
+                  <div class="titlepage text_align_left">
+                     <p></p>
+                     <h2 id="about">API</h2>
+                     <p></p>
+                     <!-- Project Section -->
+                     <h3 id="evaluater">The Interaction Evaluater</h3>
+                     <p>
+                        In order to test the package on a X task you can follow this tutorial - make a link and a demo. 
+                        <br>
+                        Below, you find the source code for ... 
+                     </p>
+                     <pre><code>if __name__ == '__main__':
+                            parser = ArgumentParser()
+                            parser.add_argument('--path_raw', type=str, default='./data/raw/crossword')
+                            parser.add_argument('--path_std', type=str, default='./data/std/crossword')
+                            parser.add_argument('--path_cache', type=str, default='./cache')
+                            parser.add_argument('--verbose', action='store_true')
+                            args = parser.parse_args()
+                        
+                            asset = CrosswordAsset(args.path_raw, args.verbose)
+                            asset.print_summary()
+                     </code></pre>
+
+                     <h4 id="tranformers">Transformers</h4>
+                     <p>
+                       This sections provides codes and tasks whatever to be done for transformer models. 
+                     </p>
+
+                     <h4 id="Others">Others ... non seq-to-seq</h4>
+                     <p>
+                       This sections provides codes and tasks whatever to be done for other models or something. 
+                     </p>
+
+                     
+                      <h2 id="visual">The Interaction Visualizer</h2>
+                     <p>
+                        In order to test the package on a X task you can follow this tutorial - make a link and a demo. 
+                        <br>
+                        Below, you find the source code for ... 
+                     </p>
+                     
+                  </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- ======= END HEADER ======= -->
+      <!-- end main content area -->
 
-      <!-- ======= MAIN CONTENT (Markdown-like text) ======= -->
-      <div class="titlepage text_align_left ">
-   <!-- Markdown-like Header -->
-   <h2>Project Overview</h2>
-   <p>
-      This is a simple demonstration project designed to help users 
-      understand the basics of our platform. It offers a streamlined 
-      setup and a range of useful features.
-   </p>
-
-   <!-- Markdown-like Sub-header -->
-   <h2> Installation Guide</h2>
-   <p>
-      To get started, make sure you have the necessary dependencies 
-      installed and then follow the instructions in the documentation 
-      to configure your environment.
-   </p>
-
-   <!-- Code Block -->
-   <pre><code>
-# A simple chunk of Python code
-
-def greet(name):
-    return f"Hello, {name}!"
-
-if __name__ == "__main__":
-    print(greet("World"))
-</code></pre>
-</div>
-      <!-- ======= END MAIN CONTENT ======= -->
-
-      <!-- ======= FOOTER (BOTTOM BAR) ======= -->
+      <!-- footer -->
       <footer>
-         <div class="footer">
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <p>© 2025 All Rights Reserved. Design by 
-                           <a href="https://html.design/">Free html Templates</a>
-                        </p>
-                     </div>
+         <div class="copyright">
+            <div class="container copy-container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <p>© 20 All Rights Reserved LAURA WULFF PAABY</p>
                   </div>
                </div>
             </div>
          </div>
       </footer>
-      <!-- ======= END FOOTER ======= -->
+      <!-- end footer -->
 
-      <!-- ======= SCRIPTS ======= -->
+      <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.0.0.min.js"></script>
       <script src="js/custom.js"></script>
+      <script>
+         // Highlight active ToC link based on scroll position
+         document.addEventListener("DOMContentLoaded", () => {
+            const tocLinks = document.querySelectorAll(".table_of_contents a");
+            const sections = document.querySelectorAll("h2, h3");
+            window.addEventListener("scroll", () => {
+               let activeSection = "";
+               sections.forEach(section => {
+                  const rect = section.getBoundingClientRect();
+                  if (rect.top >= 0 && rect.top <= window.innerHeight / 3) {
+                     activeSection = section.getAttribute("id");
+                  }
+               });
+               tocLinks.forEach(link => {
+                  link.classList.remove("active");
+                  if (link.getAttribute("href").slice(1) === activeSection) {
+                     link.classList.add("active");
+                  }
+               });
+            });
+         });
+      </script>
+      <!-- If using AOS for scroll animations -->
+      <script>
+         if (typeof AOS !== 'undefined') {
+            AOS.init();
+         }
+      </script>
    </body>
 </html>
