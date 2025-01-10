@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const toc = document.getElementById("toc");
+  const toc = document.querySelector(".table_of_contents ul");
   const headings = document.querySelectorAll("h2, h3");
 
   headings.forEach((heading) => {
