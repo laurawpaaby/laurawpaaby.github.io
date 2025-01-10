@@ -46,39 +46,18 @@
          }
 
          /* Sticky ToC beneath header */
-         /* Table of Contents */
          .table_of_contents {
             position: sticky;
-            top: 80px;
+            top: 80px; /* Adjust if your header is taller/shorter */
             z-index: 999;
             background: #fff;
             padding: 10px;
-            border-right: 1px solid #ccc;
-            list-style: none;
+            border-right: 1px solid #ccc; 
          }
-         .table_of_contents ul {
-            padding: 0;
-            margin: 0;
-         }
-         .table_of_contents li {
-            margin: 10px 0;
-         }
-         .table_of_contents li ul {
-            margin-left: 15px;
-         }
-         .table_of_contents a {
-            text-decoration: none;
-            color: #000;
-            transition: color 0.3s ease;
-         }
-         .table_of_contents a:hover {
-            color: #f00;
-         }
-         .table_of_contents a.active {
+         .table_of_contents ul li a.active {
             font-weight: bold;
-            color: #f00;
+            color: #f00; /* Red highlight */
          }
-         
          /* Overriding heading styles from style.css */
          h2 {
             font-size: 45px !important;  /* Overriding style.css (22px) */
@@ -298,29 +277,7 @@
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.0.0.min.js"></script>
       <script src="js/custom.js"></script>
-      <script>
-         // Highlight active ToC link based on scroll position
-         document.addEventListener("DOMContentLoaded", () => {
-            const tocLinks = document.querySelectorAll(".table_of_contents a");
-            const sections = document.querySelectorAll("h2, h3");
-
-            window.addEventListener("scroll", () => {
-               let activeSection = "";
-               sections.forEach(section => {
-                  const rect = section.getBoundingClientRect();
-                  if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
-                     activeSection = section.getAttribute("id");
-                  }
-               });
-               tocLinks.forEach(link => {
-                  link.classList.remove("active");
-                  if (link.getAttribute("href").slice(1) === activeSection) {
-                     link.classList.add("active");
-                  }
-               });
-            });
-         });
-      </script>
+      <script src="js/tableofcontent.js"></script>
       <!-- If using AOS for scroll animations -->
       <script>
          if (typeof AOS !== 'undefined') {
