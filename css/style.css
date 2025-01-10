@@ -172,7 +172,6 @@ img {
      font-size: 16px;
 }
 
-/* Table of Contents */
 .table_of_contents ul {
   list-style: none;
   padding: 0;
@@ -195,6 +194,7 @@ img {
   font-weight: bold;
   color: #f00; /* Highlight active section */
 }
+
 
 .lead {
      font-size: 18px;
