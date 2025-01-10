@@ -5,8 +5,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>sbs</title>
       <meta name="keywords" content="">
@@ -16,9 +15,9 @@
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <!-- style css -->
       <link rel="stylesheet" href="css/style.css">
-      <!-- Responsive-->
+      <!-- Responsive css -->
       <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
+      <!-- favicon -->
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- font-awesome -->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
@@ -27,32 +26,90 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
 
-      <!-- Inline style adjustments -->
+      <!-- Inline style overrides -->
       <style>
-         /* Add a bigger gap between content and footer */
+         /* Make container wider than default (1170px) and centered */
+         .container {
+            max-width: 1400px !important;
+            margin: 0 auto;
+         }
+
+         /* Ensure extra space between main content and footer */
          .main-content {
-            margin-bottom: 200px; /* Adjust as needed for space above footer */
+            margin-bottom: 120px; 
          }
 
-         /* Example highlight styling for the active link in TOC */
-         .table_of_contents ul li a.active {
+         /* The row that contains the ToC and content:
+            100px top margin from header */
+         .content-row {
+            margin-top: 50px;
+         }
+
+         /* Sticky ToC beneath header */
+         /* Table of Contents */
+         .table_of_contents {
+            position: sticky;
+            top: 80px;
+            z-index: 999;
+            background: #fff;
+            padding: 10px;
+            border-right: 1px solid #ccc;
+            list-style: none;
+         }
+         .table_of_contents ul {
+            padding: 0;
+            margin: 0;
+         }
+         .table_of_contents li {
+            margin: 10px 0;
+         }
+         .table_of_contents li ul {
+            margin-left: 15px;
+         }
+         .table_of_contents a {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s ease;
+         }
+         .table_of_contents a:hover {
+            color: #f00;
+         }
+         .table_of_contents a.active {
             font-weight: bold;
-            color: #f00; /* Red text to highlight */
+            color: #f00;
+         }
+         
+         /* Overriding heading styles from style.css */
+         h2 {
+            font-size: 45px !important;  /* Overriding style.css (22px) */
+            color: #2b2b2b;
+            line-height: 60px;
+            font-weight: bold;
+            padding-top: 50px;  /* Extra spacing from top if needed */
+            padding-bottom: 20px;
+            display: inline-block;
+         }
+         h3 {
+            font-size: 28px !important;  /* Overriding style.css (18px) */
+            line-height: 42px;
+            padding-top: 20px;
+            color: #2b2b2b;
+            font-weight: bold;
+            padding-bottom: 20px;
          }
 
-         /* Footer text spacing (shorter vertically) */
+         /* Footer spacing and alignment */
          .copy-container {
-            padding: 10px 0; /* Reduced padding for a shorter footer */
+            padding: 10px 0;
             text-align: center;
          }
-
-         /* Remove extra space below the footer */
-         html, body {
+         footer {
             margin: 0;
             padding: 0;
-            /* Ensures no default spacing around body */
          }
-         footer {
+
+         /* Remove default margin/padding on html/body */
+         html, body {
             margin: 0;
             padding: 0;
          }
@@ -60,7 +117,7 @@
    </head>
 
    <body class="main-layout inner_page">
-      <!-- loader  -->
+      <!-- loader -->
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#"/></div>
       </div>
@@ -91,13 +148,13 @@
                            <li class="nav-item">
                               <a class="nav-link" href="index.html">Home</a>
                            </li>
-                           <li class="nav-item">
+                           <li class="nav-item active">
                               <a class="nav-link" href="installation.html">Installation</a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link" href="userguide.html">User Guide</a>
                            </li>
-                           <li class="nav-item active">
+                           <li class="nav-item">
                               <a class="nav-link" href="api.html">API</a>
                            </li>
                            <li class="nav-item">
@@ -107,53 +164,37 @@
                      </div>
                   </nav>
                </div>
-               <div class="col-md-2">
-                  <ul class="email text_align_right">
-                     <li class="d_none">
-                        <a href="Javascript:void(0)">
-                           <i class="fa fa-user" aria-hidden="true"></i>
-                        </a>
-                     </li>
-                     <li class="d_none">
-                        <a href="Javascript:void(0)">
-                           <i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i>
-                        </a>
-                     </li>
-                  </ul>
-               </div>
             </div>
          </div>
       </div>
       <!-- end header -->
 
       <!-- main content area -->
-      <div class="shop main-content">
-         <div class="container-fluid">
-            <div class="row d_flex d_grid">
-               <!-- Table of Contents on the far left (no title) -->
+      <div class="main-content">
+         <div class="container">
+            <!-- Single row with margin-top to push content down -->
+            <div class="row content-row">
+               <!-- Table of Contents (col-md-3) -->
                <div class="col-md-3">
                   <div class="table_of_contents">
                      <ul>
-                        <li><a class="active" href="#installation">Installation</a></li>
+                        <li>
+                           <a href="#installation">Installation</a>
+                        </li>
                      </ul>
                   </div>
                </div>
-               
-               <!-- Installation content on the right -->
-               <div class="class">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-md-9 order_1_mobile">
-                           <div class="titlepage text_align_left">
-                              <h2 id="installation">Installation</h2>
-                              <p>You can install GenDa Lens via pip from PyPI:</p>
-                              <pre><code>pip install laura-package</code></pre>
-         
-                              <p>or from GitHub using:</p>
-                              <pre><code>pip install git+https://github.com/laurawpaaby/package.io</code></pre>
-                           </div>
-                        </div>   
-                     </div>
+               <!-- Main content (col-md-9) -->
+               <div class="col-md-7">
+                  <div class="titlepage text_align_left">
+                     <br>
+                     <br>
+                     <h2 id="installation">Installation</h2>
+                        <p>You can install GenDa Lens via pip from PyPI:</p>
+                        <pre><code>pip install laura-package</code></pre>
+                        <br>
+                        <p>or from GitHub using:</p>
+                        <pre><code>pip install git+https://github.com/laurawpaaby/package.io</code></pre>
                   </div>
                </div>
             </div>
@@ -180,6 +221,28 @@
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.0.0.min.js"></script>
       <script src="js/custom.js"></script>
+      <script>
+         // Highlight active ToC link based on scroll position
+         document.addEventListener("DOMContentLoaded", () => {
+            const tocLinks = document.querySelectorAll(".table_of_contents a");
+            const sections = document.querySelectorAll("h2, h3");
+            window.addEventListener("scroll", () => {
+               let activeSection = "";
+               sections.forEach(section => {
+                  const rect = section.getBoundingClientRect();
+                  if (rect.top >= 0 && rect.top <= window.innerHeight / 3) {
+                     activeSection = section.getAttribute("id");
+                  }
+               });
+               tocLinks.forEach(link => {
+                  link.classList.remove("active");
+                  if (link.getAttribute("href").slice(1) === activeSection) {
+                     link.classList.add("active");
+                  }
+               });
+            });
+         });
+      </script>
       <!-- If using AOS for scroll animations -->
       <script>
          if (typeof AOS !== 'undefined') {
