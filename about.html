@@ -34,7 +34,24 @@
             margin: 0 auto;               
          }
 
-         
+         /* Make H2 and H3 smaller than defaults set in style.css */
+         h2 {
+            font-size: 22px !important; /* Overriding style.css (22px) */
+            font-size: 45px;
+            color: #2b2b2b;
+            line-height: 60px;
+            font-weight: bold;
+            padding: 0;
+            display: inline-block;
+         }
+         h3 {
+            font-size: 70px !important; /* Overriding style.css (18px) */
+            line-height: 85px;
+            padding-top: 60px;
+            color: #2b2b2b;
+            font-weight: bold;
+            padding-bottom: 60px;
+         }
 
          /* Give extra space above footer */
          .main-content {
@@ -181,7 +198,7 @@
                         </p>
    
                         <!-- Contact Section -->
-                        <h2 id="contact">Contact</h2>
+                        <h3 id="contact">Contact - h3</h3>
                         <p>
                            If you have any questions regarding the project or the code 
                            implementation, feel free to contact <a href="mailto:someone@example.com">someone@example.com</a>.
