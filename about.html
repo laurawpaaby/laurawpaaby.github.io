@@ -164,20 +164,6 @@
                      </div>
                   </nav>
                </div>
-               <div class="col-md-2">
-                  <ul class="email text_align_right">
-                     <li class="d_none">
-                        <a href="Javascript:void(0)">
-                           <i class="fa fa-user" aria-hidden="true"></i>
-                        </a>
-                     </li>
-                     <li class="d_none">
-                        <a href="Javascript:void(0)">
-                           <i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i>
-                        </a>
-                     </li>
-                  </ul>
-               </div>
             </div>
          </div>
       </div>
@@ -197,10 +183,8 @@
                            <ul>
                               <li><a href="#project">Project</a></li>
                               <li><a href="#contact">Contact</a></li>
+                              <li><a href="#acknowledgements">Acknowledgements</a></li>
                            </ul>
-                        </li>
-                        <li>
-                           <a href="#acknowledgements">Acknowledgements</a>
                         </li>
                      </ul>
                   </div>
@@ -307,7 +291,7 @@
                let activeSection = "";
                sections.forEach(section => {
                   const rect = section.getBoundingClientRect();
-                  if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+                  if (rect.top >= 0 && rect.top <= window.innerHeight / 3) {
                      activeSection = section.getAttribute("id");
                   }
                });
