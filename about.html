@@ -25,7 +25,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
-      <head>
 
       <!-- Inline style overrides -->
       <style>
@@ -58,6 +57,19 @@
          .table_of_contents ul li a.active {
             font-weight: bold;
             color: #f00; /* Red highlight */
+         }
+
+         .table_of_contents ul {
+            list-style: none;
+            padding: 0;
+         }
+
+         .table_of_contents ul li {
+            margin: 5px 0;
+         }
+
+         .table_of_contents ul li.nested {
+            margin-left: 20px; /* Indentation for nested items */
          }
 
          /* Overriding heading styles from style.css */
@@ -159,85 +171,34 @@
                <div class="col-md-3">
                   <div class="table_of_contents">
                      <ul>
-                        <li>
-                           <a href="#about">About</a>
-                           <ul>
-                              <li><a href="#project">Project</a></li>
-                              <li><a href="#contact">Contact</a></li>
-                              <li><a href="#acknowledgements">Acknowledgements</a></li>
-                           </ul>
-                        </li>
+                        <!-- JS will populate ToC -->
                      </ul>
                   </div>
                </div>
                <!-- Main content (col-md-7) -->
                <div class="col-md-7">
                   <div class="titlepage text_align_left">
-                     <p></p>
-                     <!-- About Section (H2) -->
+                     <!-- About Section -->
                      <h2 id="about">About</h2>
-                     <p></p>
-
-                     <!-- Project Section (H3) -->
+                     <p>
+                        This section provides an overview of the project goals and context.
+                     </p>
+                     <!-- Project Section -->
                      <h3 id="project">Project</h3>
                      <p>
                         This package was developed as part of a master’s thesis on the MSc 
-                        in Cognitive Science at Aarhus University. With this package, I hope 
-                        to contribute to the development of methods for evaluating the use 
-                        of LLMs.
+                        in Cognitive Science at Aarhus University. It refines and wraps existing methods 
+                        into a coherent test suite.
                      </p>
-                     <br>
-                     <p>
-                        The main contribution is refining and wrapping existing methods into 
-                        a coherent test suite. Additionally, we have introduced our own 
-                        evaluation and visualization functions to present the results of 
-                        various metrics in a cohesive manner.
-                     </p>
-
-                     <!-- Contact Section (H3) -->
+                     <!-- Contact Section -->
                      <h3 id="contact">Contact</h3>
                      <p>
-                        If you have any questions regarding the project or the code 
-                        implementation, feel free to contact <a href="mailto:someone@example.com">someone@example.com</a>.
+                        For questions, email <a href="mailto:someone@example.com">someone@example.com</a>.
                      </p>
-                     <br>
-                     <p>
-                        GenDa Lens is licensed under MIT and available on 
-                        <a href="https://github.com/username/GenDaLens">GitHub</a>.
-                     </p>
-
-                     <!-- Acknowledgements Section (H3, though you could make it H2) -->
+                     <!-- Acknowledgements Section -->
                      <h3 id="acknowledgements">Acknowledgements</h3>
-                     <p>
-                        This project uses code from three already implemented frameworks for 
-                        quantifying gender bias in Danish. While all externally authored code 
-                        is properly attributed in the repository’s scripts, we would also 
-                        like to acknowledge the authors of the work we draw on:
-                     </p>
-                     <br>
-
-                     <!-- Example references in APA style with DOI links -->
                      <ul>
-                        <li>
-                           <strong>Reference 1:</strong> Author, A. A. (Year). 
-                           <em>Title of the article</em>. Journal Title, 10(2), 123–145. 
-                           <a href="https://doi.org/10.0000/xyz123">https://doi.org/10.0000/xyz123</a>
-                        </li>
-                        <li>
-                           <strong>Reference 2:</strong> Author, B. B., &amp; Author, C. C. (Year). 
-                           <em>Another work</em>. Publisher. 
-                           <a href="https://doi.org/10.0000/abc456">https://doi.org/10.0000/abc456</a>
-                        </li>
-                        <li>
-                           <strong>Reference 3:</strong> Author, D. D. (Year). 
-                           <em>Yet another reference</em>. Conference Proceedings. 
-                           <a href="https://doi.org/10.0000/def789">https://doi.org/10.0000/def789</a>
-                        </li>
-                        <li>
-                           <strong>Reference 4:</strong> Organization E. (Year). 
-                           <em>Document title</em>. Retrieved from 
-                           <a href="https://doi.org/10.0000/ghi012">https://doi.org/10.0000/ghi012</a>
-                        </li>
+                        <li><strong>Reference 1:</strong> Example reference.</li>
                      </ul>
                   </div>
                </div>
@@ -250,11 +211,7 @@
       <footer>
          <div class="copyright">
             <div class="container copy-container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <p>© 20 All Rights Reserved LAURA WULFF PAABY</p>
-                  </div>
-               </div>
+               <p>© 2025 All Rights Reserved LAURA WULFF PAABY</p>
             </div>
          </div>
       </footer>
@@ -263,15 +220,6 @@
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/custom.js"></script>
-      <script> src="js/tableofcontent.js"></script>
-
-      <!-- If using AOS for scroll animations -->
-      <script>
-         if (typeof AOS !== 'undefined') {
-            AOS.init();
-         }
-      </script>
+      <script src="js/tableofcontent.js"></script>
    </body>
 </html>
