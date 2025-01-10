@@ -40,7 +40,7 @@
          }
 
          /* The row that contains the ToC and content:
-            100px top margin from header */
+            50px top margin from header */
          .content-row {
             margin-top: 50px;
          }
@@ -72,10 +72,10 @@
          h3 {
             font-size: 28px !important;  /* Overriding style.css (18px) */
             line-height: 42px;
-            padding-top: 25px;
+            padding-top: 30px;
             color: #2b2b2b;
             font-weight: bold;
-            padding-bottom: 10px;
+            padding-bottom: 5px;
          }
 
          /* Footer spacing and alignment */
@@ -163,21 +163,21 @@
                            <ul>
                               <li><a href="#project">Project</a></li>
                               <li><a href="#contact">Contact</a></li>
+                              <li><a href="#acknowledgements">Acknowledgements</a></li>
                            </ul>
-                        </li>
-                        <li>
-                           <a href="#acknowledgements">Acknowledgements</a>
                         </li>
                      </ul>
                   </div>
                </div>
-               <!-- Main content (col-md-9) -->
+               <!-- Main content (col-md-7) -->
                <div class="col-md-7">
                   <div class="titlepage text_align_left">
                      <p></p>
+                     <!-- About Section (H2) -->
                      <h2 id="about">About</h2>
                      <p></p>
-                     <!-- Project Section -->
+
+                     <!-- Project Section (H3) -->
                      <h3 id="project">Project</h3>
                      <p>
                         This package was developed as part of a master’s thesis on the MSc 
@@ -193,7 +193,7 @@
                         various metrics in a cohesive manner.
                      </p>
 
-                     <!-- Contact Section -->
+                     <!-- Contact Section (H3) -->
                      <h3 id="contact">Contact</h3>
                      <p>
                         If you have any questions regarding the project or the code 
@@ -205,7 +205,7 @@
                         <a href="https://github.com/username/GenDaLens">GitHub</a>.
                      </p>
 
-                     <!-- Acknowledgements Section -->
+                     <!-- Acknowledgements Section (H3, though you could make it H2) -->
                      <h3 id="acknowledgements">Acknowledgements</h3>
                      <p>
                         This project uses code from three already implemented frameworks for 
@@ -264,7 +264,8 @@
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.0.0.min.js"></script>
       <script src="js/custom.js"></script>
-      <script src="js/tableofcontent.js"></script>
+      <script> src="js/tableofcontent.js"></script>
+
       <!-- If using AOS for scroll animations -->
       <script>
          if (typeof AOS !== 'undefined') {
