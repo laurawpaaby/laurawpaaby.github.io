@@ -172,6 +172,35 @@ img {
      font-size: 16px;
 }
 
+/* Table of Contents */
+.table_of_contents {
+   position: sticky;
+   top: 80px; /* Adjust if your header is taller/shorter */
+   z-index: 999;
+   background: #fff;
+   padding: 10px;
+   border-right: 1px solid #ccc;
+}
+.table_of_contents ul {
+   list-style: none;
+   padding: 0;
+}
+.table_of_contents ul li {
+   margin: 0 0 10px;
+}
+.table_of_contents ul li.nested {
+   margin-left: 20px; /* Indent nested items */
+}
+.table_of_contents ul li a {
+   text-decoration: none;
+   color: #000;
+}
+.table_of_contents ul li a.active {
+   font-weight: bold;
+   color: #f00; /* Highlight active section */
+}
+
+
 .lead {
      font-size: 18px;
      line-height: 30px;
